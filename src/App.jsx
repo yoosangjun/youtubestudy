@@ -16,7 +16,10 @@ function App() {
       requestOptions
     )
       .then((response) => response.json())
-      .then((result) => setVideos(result.items))
+      .then((result) => {
+        setVideos(result.items);
+        console.log(videos);
+      })
       .catch((error) => console.log("error", error));
   }, []);
   return (
